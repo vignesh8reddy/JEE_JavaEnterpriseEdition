@@ -1,0 +1,15 @@
+<web-app>
+    <servlet>
+        <servlet-name>DServlet</servlet-name>
+        <servlet-class>com.jee.controller.C01ServletIntro</servlet-class>
+        <load-on-startup>10</load-on-startup>
+        <!-- load-on-startup tag is to tell server load the immediately after server had started.
+        If there are multiple servlet classes to be loaded on server startup, the one which has
+        smaller number (rank) is loaded first-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+</web-app>

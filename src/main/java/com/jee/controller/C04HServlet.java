@@ -8,9 +8,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletConfig;
 
 @WebServlet(value = "/hservlet")
 public class C04HServlet extends HttpServlet{
+
+    @Override
+    public void init(ServletConfig config){*/
+        /*
+        As you are clearly overriding HttpServlet's implementation of init() method
+        which somehow stores ServletConfig value in a global variable so that it could
+        be accessed from doXXXX() methods, now you cannot access ServletConfig Object
+        outside this init() method.
+        */
+
+        System.out.println("Servlet Initalisation using init(SerlvetConfig config) method");
+    }
+
+    /*
+    @Override
+    public void init(){*/
+        /*
+        Now you are overriding HttpServlet's implementation of init() method
+        meant to be overridden by developer you can access ServletConfig Object outside this
+        init() method.
+
+        System.out.println("Servlet Initialization using init() method");
+    }*/
+
+
 
     public void doGet(HttpServletRequest hrequest, HttpServletResponse hresponse) throws ServletException, IOException {
         /*
@@ -20,8 +46,11 @@ public class C04HServlet extends HttpServlet{
         hresponse.setContentType("text/html");
         PrintWriter out = hresponse.getWriter();
         out.println("<html> <body> This executed from doGet() method <br> " +
-                "HttpRequest Object: "+hrequest);
+                "HttpRequest Object: "+hrequest+
+                "<br> ServletConfiguration Object: "+getServletConfig());
         out.println("<br> HttpResponse Object: </body> </html>"+hresponse);
+
+        //ServletConfiguration Object: null;
 
     }
 
@@ -34,8 +63,10 @@ public class C04HServlet extends HttpServlet{
         hresponse.setContentType("text/html");
         PrintWriter out = hresponse.getWriter();
         out.println("<html> <body> This executed from doPost() method <br> " +
-                "HttpRequest Object: "+hrequest);
+                "HttpRequest Object: "+hrequest+
+                "<br> ServletConfiguration Object: "+getServletConfig());
         out.println("<br> HttpResponse Object: </body> </html>"+hresponse);
+
 
     }
     /*
@@ -43,6 +74,7 @@ public class C04HServlet extends HttpServlet{
     but if you type it on address bar it'd going to call doGet() and
     if you use form submit button it'd call doPost();
      */
+
 
 
 }

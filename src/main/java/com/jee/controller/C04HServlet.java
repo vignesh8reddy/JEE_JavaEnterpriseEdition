@@ -14,7 +14,7 @@ import javax.servlet.ServletConfig;
 public class C04HServlet extends HttpServlet{
 
     @Override
-    public void init(ServletConfig config){*/
+    public void init(ServletConfig config){
         /*
         As you are clearly overriding HttpServlet's implementation of init() method
         which somehow stores ServletConfig value in a global variable so that it could

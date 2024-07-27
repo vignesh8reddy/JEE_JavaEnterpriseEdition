@@ -6,12 +6,12 @@
 
     <servlet>
         <servlet-name>C01Servlet</servlet-name>
-        <servlet-class>com.jee.ServletIntro.C01ServletIntro</servlet-class>
+        <servlet-class>com.jee.aaServletIntro.C01ServletIntro</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>C09ServletConfigXML</servlet-name>
-        <servlet-class>com.jee.ServletIntro.C09ServletConfigXML</servlet-class>
+        <servlet-class>com.jee.aaServletIntro.C09ServletConfigXML</servlet-class>
         <init-param>
             <param-name>fname</param-name>
             <param-value>Math</param-value>

@@ -27,7 +27,7 @@ Whenever a request for Servlet has made always service() method is called repeat
 destroy() method is also called only once.
  */
 
-package com.jee.controller;
+package com.jee.ServletIntro;
 
 
 import javax.servlet.Servlet;
@@ -38,21 +38,20 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class C01ServletIntro implements Servlet
-{
+public class C01ServletIntro implements Servlet {
 
     static{
-        System.out.println("Servlet Loading....");
+        System.out.println("Servlet Loaded");
     }
 
     public C01ServletIntro(){
-        System.out.println("Servlet Instantiation...");
+        System.out.println("Servlet Instantiation");
     }
 
-    //life cycle methods
+    //life cycle methods of a servlet
     public void init(ServletConfig config) {
         //Servlet Initialization phase
-        System.out.println("Servlet is initialized...");
+        System.out.println("Servlet Initialized");
     }
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException,IOException{
@@ -64,9 +63,9 @@ public class C01ServletIntro implements Servlet
 
         // 2. Use PrintWriter object  to send the response
         PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Output</title></head>");
+        out.println("<html><head><title>First Servlet</title></head>");
         out.println("<body>");
-        out.println("<h1 style='color:red'><marquee>Welcome to servlet coding...</marquee></h1>");
+        out.println("<h1 style='color:red'><marquee>Hi I'm a Servlet Response</marquee></h1>");
         out.println("</body>");
         out.println("</html>");
 
@@ -75,8 +74,8 @@ public class C01ServletIntro implements Servlet
     }
 
     public void destroy(){
-        // Deinstantiation activities
-        System.out.println("Servlet DeInstantiation....");
+        // De-Instantiation
+        System.out.println("Servlet De-Instantiation");
     }
 
     public ServletConfig getServletConfig(){

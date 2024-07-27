@@ -1,4 +1,4 @@
-package com.jee.controller;
+package com.jee.ServletIntro;
 
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class C04HServlet extends HttpServlet{
         outside this init() method.
         */
 
-        System.out.println("Servlet Initalisation using init(SerlvetConfig config) method");
+        System.out.println("Servlet Initialized using init(SerlvetConfig config) method");
     }
 
     /*
@@ -67,7 +67,7 @@ public class C04HServlet extends HttpServlet{
                 "<br> ServletConfiguration Object: "+getServletConfig());
         out.println("<br> HttpResponse Object: </body> </html>"+hresponse);
 
-
+        out.close();
     }
     /*
     url is same i.e http://localhost:xxxx/controller_war_exploded/hservlet

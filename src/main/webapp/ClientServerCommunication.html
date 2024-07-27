@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Page</title>
+</head>
+<body>
+    <h1> This is a Request Page from Client(Browser)</h1>
+
+    <h4>Fill the below form to send this details to Server</h4>
+
+    <form method="POST" action="./response">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" name="fname"/></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" name="lname"/></td>
+            </tr>
+            <tr>
+                <th>Email Address</th>
+                <td><input type="email" name="email"/></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>
+                    <select name="country">
+                        <option value="+1">USA: +1</option>
+                        <option value="+91">India: +91</option>
+                    </select>
+                    <input type="text" name="phone"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Create a Password</th>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
+
+
+    </form>
+</body>
+</html>

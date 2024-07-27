@@ -1,15 +1,47 @@
 <web-app>
+
+    <!-- load-on-startup tag is to tell server load the immediately after server had started.
+    If there are multiple servlet classes to be loaded on server startup, the one which has
+    smaller number (rank) is loaded first-->
+
     <servlet>
-        <servlet-name>DServlet</servlet-name>
-        <servlet-class>com.jee.controller.C01ServletIntro</servlet-class>
-        <load-on-startup>10</load-on-startup>
-        <!-- load-on-startup tag is to tell server load the immediately after server had started.
-        If there are multiple servlet classes to be loaded on server startup, the one which has
-        smaller number (rank) is loaded first-->
+        <servlet-name>C01Servlet</servlet-name>
+        <servlet-class>com.jee.ServletIntro.C01ServletIntro</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>C09ServletConfigXML</servlet-name>
+        <servlet-class>com.jee.ServletIntro.C09ServletConfigXML</servlet-class>
+        <init-param>
+            <param-name>fname</param-name>
+            <param-value>Math</param-value>
+        </init-param>
+        <init-param>
+            <param-name>lname</param-name>
+            <param-value>Chamber</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>DServlet</servlet-name>
+        <servlet-name>C01Servlet</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>C09ServletConfigXML</servlet-name>
+        <url-pattern>/configa</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>jdbcURL</param-name>
+        <param-value>jdbc:mysql:///javaenterpriseedition</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
 </web-app>

@@ -24,7 +24,7 @@ public class C16ServletHttpSessionA extends HttpServlet {
         session.setAttribute("name", name);
         session.setAttribute("age", age);
 
-        // forward the response to form2.html
+        // forward the response to httpsessionform2.html
         RequestDispatcher rd = request.getRequestDispatcher("/httpsessionform2.html");
         rd.forward(request, response);
 

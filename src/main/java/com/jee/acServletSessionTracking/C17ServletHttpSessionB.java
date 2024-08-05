@@ -24,7 +24,7 @@ public class C17ServletHttpSessionB extends HttpServlet {
         session.setAttribute("qual", qual);
         session.setAttribute("design", design);
 
-        // forward the response to form3.html
+        // forward the response to httpsessionform3.html
         RequestDispatcher rd = request.getRequestDispatcher("/httpsessionform3.html");
         rd.forward(request, response);
 
